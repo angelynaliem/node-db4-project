@@ -85,36 +85,13 @@
               "widthDefault": 60
             },
             "id": "67849861-ee92-c0d2-161e-4b3e4e6f0ce1"
-          },
-          {
-            "name": "instruction_id",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 79,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b96dcd6b-20e8-dfa4-3037-f53952dbbc4d"
           }
         ],
         "ui": {
           "active": false,
           "left": 73,
           "top": 432,
-          "zIndex": 328,
+          "zIndex": 351,
           "widthName": 60,
           "widthComment": 60
         },
@@ -256,7 +233,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 528,
           "top": 535,
           "zIndex": 349,
@@ -314,13 +291,36 @@
               "widthDefault": 60
             },
             "id": "05782732-620f-4f53-6d78-1d4a1042b453"
+          },
+          {
+            "name": "recipe_id",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8a215283-09a1-7efc-314e-a74144849f8b"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 81,
           "top": 227,
-          "zIndex": 320,
+          "zIndex": 359,
           "widthName": 68,
           "widthComment": 60
         },
@@ -402,8 +402,8 @@
           "columnIds": [
             "0e64db10-d06b-cfe7-2b9d-4fe14620afda"
           ],
-          "x": 439,
-          "y": 497.25,
+          "x": 420,
+          "y": 487,
           "direction": "right"
         },
         "end": {
@@ -417,29 +417,6 @@
         },
         "id": "f5e9bf16-a8d5-0375-80f1-434b708093a5",
         "relationshipType": "OneN"
-      },
-      {
-        "identification": false,
-        "start": {
-          "tableId": "39f61c2a-d92e-59ba-636f-210083656619",
-          "columnIds": [
-            "90d2f30a-6875-e500-a920-f95cdbd9a23d"
-          ],
-          "x": 255,
-          "y": 337,
-          "direction": "bottom"
-        },
-        "end": {
-          "tableId": "65c2c768-9fec-1fc1-307c-848be48b8e9a",
-          "columnIds": [
-            "b96dcd6b-20e8-dfa4-3037-f53952dbbc4d"
-          ],
-          "x": 256,
-          "y": 432,
-          "direction": "top"
-        },
-        "id": "1ff13d5c-8046-2410-2ee1-e2af7d7d0ecd",
-        "relationshipType": "OneOnly"
       },
       {
         "identification": false,
@@ -486,6 +463,29 @@
         },
         "id": "05f2d427-cc7e-7f84-62cf-4b7f9f4b7723",
         "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "65c2c768-9fec-1fc1-307c-848be48b8e9a",
+          "columnIds": [
+            "0e64db10-d06b-cfe7-2b9d-4fe14620afda"
+          ],
+          "x": 246.5,
+          "y": 432,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "39f61c2a-d92e-59ba-636f-210083656619",
+          "columnIds": [
+            "8a215283-09a1-7efc-314e-a74144849f8b"
+          ],
+          "x": 255,
+          "y": 357.5,
+          "direction": "bottom"
+        },
+        "id": "d6592f6a-81e4-d76c-272f-1c3ac51d1cc4",
+        "relationshipType": "OneOnly"
       }
     ]
   }
