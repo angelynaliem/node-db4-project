@@ -1,5 +1,4 @@
 const db = require("../data/db-config.js");
-const RecipesRouter = require("./recipes-router.js");
 
 module.exports = {
   getRecipes,
@@ -25,7 +24,11 @@ async function getShoppingList(id) {
         "recipes_ingredients_quantity"
       )
       .where({ recipe_id: id })
-      .select("quantity_description", "ingredient_name", "recipe_name");
+      .select(
+        "quantities.quantity_description",
+        "ingredients.ingredient_name",
+        "recipes.recipe_name"
+      );
     return list;
   } catch (err) {
     throw err;
@@ -37,7 +40,7 @@ async function getInstructions(id) {
     const instructions = await db("instructions")
       .join("recipes")
       .where({ recipe_id: id })
-      .select("instruction_description", "recipe_name");
+      .select("instructions.instruction_description", "recipes.recipe_name");
 
     return instructions;
   } catch (err) {
