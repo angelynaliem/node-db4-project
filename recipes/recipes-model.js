@@ -16,18 +16,18 @@ async function getRecipes() {
 
 async function getShoppingList(id) {
   try {
-    const list = await db("recipes_ingredients_quantity")
+    const list = await db("recipes_ingredients")
       .join(
         "ingredients",
-        "quantities",
-        "recipes",
-        "recipes_ingredients_quantity"
+        "recipes_ingredients.ingredient_id",
+        "ingredients.id"
       )
+      .join("recipes", "recipes_ingredients.recipe_id", "recipes.id")
       .where({ recipe_id: id })
       .select(
-        "quantities.quantity_description",
         "ingredients.ingredient_name",
-        "recipes.recipe_name"
+        "recipes.recipe_name",
+        "recipes_ingredients.quantity"
       );
     return list;
   } catch (err) {
@@ -38,7 +38,7 @@ async function getShoppingList(id) {
 async function getInstructions(id) {
   try {
     const instructions = await db("instructions")
-      .join("recipes")
+      .join("recipes", "recipes.id", "instructions.recipe_id")
       .where({ recipe_id: id })
       .select("instructions.instruction_description", "recipes.recipe_name");
 
